@@ -2,7 +2,7 @@
 
 **QuakeStream** is a production-grade data engineering solution that implements **Change Data Capture (CDC)** to stream global seismic activity from the USGS API into an analytical ecosystem. It bridges the gap between high-frequency transactional ingestion and real-time geospatial visualization, ensuring zero data loss and sub-second latency.
 
-![Real-Time Earthquake Dashboard](quake.png)
+![Real-Time Earthquake Dashboard](visualization.png)
 
 ---
 
