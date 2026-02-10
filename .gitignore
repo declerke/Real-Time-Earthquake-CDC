@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Docker
+.docker/
+# Exclude local data persistence if you don't want to share your DB state
+# postgres_source_data/
+# postgres_sink_data/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+
+# Data and Logs
+*.log
+load_data.sql
+2.5_day.csv

@@ -1,0 +1,30 @@
+{
+  "name": "jdbc-sink-earthquakes",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "connection.url": "jdbc:postgresql://postgres-sink:5432/earthquakes_sink?stringtype=unspecified",
+    "connection.user": "postgres",
+    "connection.password": "postgres",
+    "db.timezone": "UTC",
+    "topics": "dbz-source.public.earthquake_events",
+    "table.name.format": "earthquake_events",
+    "insert.mode": "upsert",
+    "upsert.keys": "event_id",
+    "pk.mode": "record_key",
+    "pk.fields": "event_id",
+    "auto.create": "false",
+    "auto.evolve": "false",
+    "delete.enabled": "true",
+    "batch.size": "100",
+    "max.retries": "10",
+    "retry.backoff.ms": "3000",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "true",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "true",
+    "transforms": "dropDbzFields",
+    "transforms.dropDbzFields.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+    "transforms.dropDbzFields.exclude": "__deleted,__op,__source_ts_ms"
+  }
+}
